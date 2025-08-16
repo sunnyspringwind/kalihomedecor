@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-
+import logo from "../assets/logo.png"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -18,11 +18,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-primary">Kali Home Decor</h1>
-          </div>
+                <div className="flex-shrink-0">
+                <img src={logo} alt="Company Logo" className="pt-2 h-30 w-auto" />
+                </div>
 
-          {/* Desktop Navigation */}
+                {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <a
