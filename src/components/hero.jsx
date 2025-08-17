@@ -23,9 +23,9 @@ export default function Hero() {
                 </p>
                 <button
                     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 text-lg rounded-md transition-colors duration-200"
-                    onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
                 >
-                    Browse Products
+                    Browse Services
                 </button>
             </div>
         </section>

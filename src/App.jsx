@@ -1,27 +1,19 @@
-import Header from './components/header'
-import Hero from './components/hero'
-import About from './components/about'
-import Products from './components/products'
-import Services from './components/services'
-import ContactForm from './components/contact-form'
-import ContactInfo from './components/contact-info'
-import Footer from './components/footer'
+import Home from "./pages/Home"
+import ServiceDetails from "./pages/ServiceDetails";
+import ServicePage from "./pages/ServicePage"
+import {Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Products />
-        <Services />
-        
-          <ContactInfo />
-      
-      </main>
-      <Footer />
-    </div>
+   
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicePage />} />
+        {/* Dynamic route with :id */}
+        <Route path="/services/:serviceId" element={<ServiceDetails />} />
+      </Routes>
+   
   )
 }
 
