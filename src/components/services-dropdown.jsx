@@ -113,7 +113,7 @@ export default function ServicesDropdown({
             {/* Services Categories */}
             <div className="space-y-6">
               {servicesData.map((category, categoryIndex) => (
-                <div  key={categoryIndex}>
+                <div key={categoryIndex}>
                   {/* Category Header */}
                   <div className="flex items-center gap-2 mb-1">
                     <div className="text-red-600">{category.icon}</div>
@@ -125,10 +125,14 @@ export default function ServicesDropdown({
                   {/* Services List */}
                   <div className="space-y-1 ml-6">
                     {category.services.map((service, serviceIndex) => (
-                      <button
+                      <NavLink
                         key={serviceIndex}
-                        onClick={() => handleServiceClick(service.id)}
-                        className="w-full text-left p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                        to={`/services/${service.id}`}
+                        onClick={() => setIsOpen(false)}
+                        className={({ isActive }) => `
+                          w-full text-left p-2 rounded-lg hover:bg-gray-50 transition-colors group block
+                          ${isActive ? 'bg-gray-50' : ''}
+                        `}
                       >
                         <div className="flex flex-col">
                           <span className="text-gray-700 group-hover:text-red-600 font-medium text-sm transition-colors">
@@ -138,7 +142,7 @@ export default function ServicesDropdown({
                             {service.nepaliTitle}
                           </span>
                         </div>
-                      </button>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
@@ -148,18 +152,13 @@ export default function ServicesDropdown({
             {/* Footer */}
             <div className="mt-2 pt-4 border-t border-gray-100">
               <div className="text-center">
-                <a 
-                 
-                  onClick={() => {
-                    setIsOpen(false);
-                   }}
-
-                 href="/services" 
-                  
+                <NavLink 
+                  to="/services"
+                  onClick={() => setIsOpen(false)}
                   className="text-red-600 hover:text-red-700 font-semibold text-sm transition-colors"
                 >
                   View All Services →
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
