@@ -1,3 +1,5 @@
+import heroImg from "../assets/heroImg.png"
+
 export default function About() {
     return (
         <section id="about" className="py-16 bg-muted/30">
@@ -24,8 +26,8 @@ export default function About() {
                     <div className="relative">
                         <div className="rounded-lg shadow-lg overflow-hidden">
                             <img
-                                src="https://nepalisearchengine.com/storage/files/np/926/d3fbd7f239d68df87a41dd4bb564bd2d.jpeg"
-                                alt="Kali Home Decor"
+                                src={heroImg}
+                                                                alt="Kali Home Decor"
                                 className="w-full h-80 object-cover"
                             />
                         </div>
